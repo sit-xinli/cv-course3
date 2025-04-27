@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
-# Load girl.jpg image
+# Load lena.jpg image
 image = cv2.imread('lena.png')
 image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
 
@@ -47,4 +47,18 @@ plt.show()
 
 # Save the noisy image
 cv2.imwrite('noisy_lena.png', cv2.cvtColor(noisy_image, cv2.COLOR_RGB2BGR)) 
+
+#add noise to scene.png image and save it as noisy_scene.png
+image = cv2.imread('scene.png')
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+noisy_image = add_salt_and_pepper_noise(image, salt_prob, pepper_prob)
+#save the noisy image
+cv2.imwrite('noisy_scene.png', cv2.cvtColor(noisy_image, cv2.COLOR_RGB2BGR))
+
+#add noise to jinja.png image and save it as noisy_jinja.png
+image = cv2.imread('jinja.png')
+image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+noisy_image = add_salt_and_pepper_noise(image, salt_prob, pepper_prob)
+#save the noisy image
+cv2.imwrite('noisy_jinja.png', cv2.cvtColor(noisy_image, cv2.COLOR_RGB2BGR))
 

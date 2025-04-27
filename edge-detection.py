@@ -15,7 +15,7 @@ image_gray = cv2.cvtColor(image, cv2.COLOR_RGB2GRAY)
 image_blur = cv2.GaussianBlur(image_gray, (5, 5), 1.5)
 
 # Apply Canny edge detection
-edges = cv2.Canny(image_blur, 80, 200)
+edges = cv2.Canny(image_blur, 100, 200, apertureSize=3)
 
 # Display original and edge-detected images
 plt.figure(figsize=(10, 5))
